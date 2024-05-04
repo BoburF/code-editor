@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "rootDir": "./src", /* Specify the root folder within your source files. */
+        "outDir": "./build", /* Specify an output folder for all emitted files. */
+        "baseUrl": "src",
+        "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
+        "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+        "strict": true, /* Enable all strict type-checking options. */
+        "noImplicitAny": true, /* Enable error reporting for expressions and declarations with an implied `any` type.. */
+        "strictNullChecks": true, /* When type checking, take into account `null` and `undefined`. */
+        "alwaysStrict": true, /* Ensure 'use strict' is always emitted. */
+        "noUnusedLocals": true, /* Enable error reporting when a local variables aren't read. */
+        "noUnusedParameters": true, /* Raise an error when a function parameter isn't read */
+        "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+        "ignoreDeprecations": "5.0"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "extends": "@tsconfig/node16-strictest/tsconfig.json"
+}
+
