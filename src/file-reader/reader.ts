@@ -24,6 +24,7 @@ export class FileReader {
             let lines: string[] = [];
             this.fileStream.on('data', (chunk: string) => {
                 const chunkLines = chunk.split('\n');
+                chunkLines.pop()
                 const remainingLines = this.chunkSize - lines.length;
 
                 if (remainingLines >= chunkLines.length) {
