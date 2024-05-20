@@ -18,7 +18,6 @@ async function main() {
     if (process.stdin.isTTY) process.stdin.setRawMode(true);
 
     process.stdin.on("keypress", (_chunk, key: { sequence: string, name: string, ctrl: boolean, meta: boolean, shift: boolean }) => {
-        console.log(key)
         if (key.ctrl) {
             switch (key.name) {
                 case "c":
@@ -34,8 +33,14 @@ async function main() {
                     editor.moveCursor({ vertical: -1, horizontal: 0 })
                     screen.render(editor.update())
                     break;
-                default:
-                    console.log(key.name)
+                case "right":
+                    editor.moveCursor({ vertical: 0, horizontal: 1 })
+                    screen.render(editor.update())
+                    break;
+                case "left":
+                    editor.moveCursor({ vertical: 0, horizontal: -1 })
+                    screen.render(editor.update())
+                    break;
             }
         }
     })
