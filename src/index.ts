@@ -22,6 +22,9 @@ async function main() {
             switch (key.name) {
                 case "c":
                     process.exit(0)
+                case "s":
+                    fileReader.save(editor.finalize())
+                    break;
             }
         } else {
             switch (key.name) {
@@ -43,6 +46,8 @@ async function main() {
                     break;
             }
         }
+
+        console.log(editor.update())
     })
 }
 

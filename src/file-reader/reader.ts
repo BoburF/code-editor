@@ -17,4 +17,8 @@ export class FileReader {
             }
         });
     }
+
+    save(text: string){
+        fs.writeFileSync(this.filePath, text)
+    }
 }
