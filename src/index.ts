@@ -27,9 +27,13 @@ async function main() {
         } else {
             switch (key.name) {
                 case "down":
-                    editor.moveCursor({up: 0, down: 1, left: 0, right: 0 })
-                       screen.render(editor.update())
-                break;
+                    editor.moveCursor({ vertical: 1, horizontal: 0 })
+                    screen.render(editor.update())
+                    break;
+                case "up":
+                    editor.moveCursor({ vertical: -1, horizontal: 0 })
+                    screen.render(editor.update())
+                    break;
                 default:
                     console.log(key.name)
             }

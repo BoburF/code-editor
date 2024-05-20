@@ -17,18 +17,16 @@ export class Editor {
         return this.lines
     }
 
-    moveCursor({ up, down, left, right }: {
-        up: number,
-        down: number,
-        left: number,
-        right: number
+    moveCursor({ vertical, horizontal }: {
+        vertical: number,
+        horizontal: number,
     }) {
         if (this.lines[this.position.vertical]) {
             this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + "" + this.lines[this.position.vertical]!.slice(this.position.horizontal + 1, this.lines[this.position.vertical]!.length)
         }
 
-        this.position.vertical += up | down
-        this.position.horizontal += right | left
+        this.position.vertical += vertical
+        this.position.horizontal += horizontal 
 
         if (this.lines[this.position.vertical]) {
             this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + "|" + this.lines[this.position.vertical]!.slice(this.position.horizontal, this.lines[this.position.vertical]!.length)
