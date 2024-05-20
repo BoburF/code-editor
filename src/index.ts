@@ -44,10 +44,10 @@ async function main() {
                     editor.moveCursor({ vertical: 0, horizontal: -1 })
                     screen.render(editor.update())
                     break;
+                default:
+                    screen.render(editor.write(key.sequence))
             }
         }
-
-        console.log(editor.update())
     })
 }
 

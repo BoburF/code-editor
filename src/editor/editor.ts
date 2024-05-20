@@ -51,6 +51,15 @@ export class Editor {
         return this.update()
     }
 
+    write(character: string) {
+        this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + "" + this.lines[this.position.vertical]!.slice(this.position.horizontal + 1, this.lines[this.position.vertical]!.length)
+        this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + character + this.lines[this.position.vertical]!.slice(this.position.horizontal, this.lines[this.position.vertical]!.length)
+        this.position.horizontal += 1
+        this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + "|" + this.lines[this.position.vertical]!.slice(this.position.horizontal, this.lines[this.position.vertical]!.length)
+
+        return this.update()
+    }
+
     finalize() {
         this.lines[this.position.vertical] = this.lines[this.position.vertical]!.slice(0, this.position.horizontal) + "" + this.lines[this.position.vertical]!.slice(this.position.horizontal + 1, this.lines[this.position.vertical]!.length)
 
